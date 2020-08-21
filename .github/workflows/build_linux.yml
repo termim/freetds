@@ -56,7 +56,8 @@ jobs:
         [global]\n
         port = ${TDSPORT}\n
         tds version = ${TDSVER}\n
-        encryption = require" >> ${FREETDSCONF}
+        encryption = require\n
+        [JDBC]\n" >> ${FREETDSCONF}
 
     - name: create PWD
       run: |
@@ -69,6 +70,8 @@ jobs:
     - name: make check2
       run: |
         set -e -x
+        cat ${FREETDSCONF}
+        cat ${TDSPWDFILE}
         ./src/apps/tsql -C
         ./src/apps/tsql -L -H "${TDSPWDSRV}"
         echo "SELECT @@VERSION\nGO\n" | ./src/apps/tsql -H "${TDSPWDSRV}" -p "${TDSPORT}" -U "${TDSPWDUID}" -P "${TDSPWDPWD}"
