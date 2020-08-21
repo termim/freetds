@@ -39,6 +39,8 @@ jobs:
     steps:
 
     - uses: actions/checkout@v2
+      with:
+        ref: branch-1_2
 
     - name: before_install
       run:  |
