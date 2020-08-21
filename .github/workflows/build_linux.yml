@@ -15,17 +15,30 @@ jobs:
       matrix:
         os: [ubuntu-latest]
 
+    env:
+        FREETDSCONF: /tmp/freetds.conf.local
+        TDSPWDSRV: 127.0.0.1
+        TDSPWDUID: sa
+        TDSPWDPWD: sqlServerPassw0rd
+        TDSPORT: 1433
+        TDSVER: 7.2
+
+    services:
+      SQLServer:
+        image: mcr.microsoft.com/mssql/server:2017-latest
+        env:
+          ACCEPT_EULA: Y
+          SA_PASSWORD: $TDSPWDPWD
+        ports:
+          - 1433:1433
+
     steps:
 
     - uses: actions/checkout@v2
 
     - name: before_install
       run:  |
-        #sudo apt-get install libgnutls-dev  # install libgnutls-dev BEFORE adding PPA; otherwise I seem to get some version that breaks things
-        #sudo add-apt-repository ppa:dns/gnu --yes  # this PPA has a newer automake (1.14) than one in default repo (1.11)
-        #sudo apt-get update
         sudo apt-get install autoconf automake libtool gettext gperf
-        #dpkg -l libgnutls-dev
         autoreconf -i
 
     - name: configure
@@ -35,10 +48,19 @@ jobs:
       run: make
 
     - name: make check
-      run: make check
-
-    - name: make distcheck
-      run: make distcheck
+      run: |
+        echo -e "\n
+        [global]\n
+        port = ${TDSPORT}\n
+        tds version = ${TDSVER}\n
+        encryption = require" >> /tmp/freetds.conf.local
+        echo -e "SELECT @@VERSION\nGO\n"
+        | TDSDUMPCONFIG=stdout ./src/apps/tsql -H "$TDSPWDSRV" -p "$TDSPORT" -U "$TDSPWDUID" -P "$TDSPWDPWD"
+        | awk '(/encrypt level/ || data)   { print $0 }
+               (/^Microsoft SQL Server/)   { data = 1; print ""; print }
+               (/1 row affected/)          { exit }'
+        misc/write_PWD_from_env_vars.sh
+        make -C src/tds/unittests check
 
     - name: install
       run: make install
