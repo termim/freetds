@@ -91,7 +91,9 @@ jobs:
         make -C src/tds/unittests check
 
     - name: LOG
+      if: ${{ failure() }}
       run: |
+        cat src/tds/unittests/test-suite.log
         cat ${TDSDUMPCONFIG}
         cat ${TDSDUMP}
 
