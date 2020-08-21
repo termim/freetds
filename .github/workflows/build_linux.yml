@@ -20,6 +20,7 @@ jobs:
         TDSDUMP: /tmp/freetds.log
         TDSDUMPCONFIG: /tmp/freetds-DUMP-CONFIG.log
         TDSPWDSRV: localhost
+        TDSPWDDB: tempdb
         TDSPWDUID: sa
         TDSPWDPWD: sqlServerPassw0rd
         TDSPORT: 1433
@@ -50,7 +51,7 @@ jobs:
     - name: make
       run: make
 
-    - name: make check1
+    - name: create FREETDSCONF
       run: |
         echo -e "\n
         [global]\n
@@ -67,7 +68,7 @@ jobs:
         SRV=JDBC
         DB=tempdb\n" >> ${TDSPWDFILE}
 
-    - name: make check2
+    - name: make check1
       run: |
         set -e -x
         cat ${FREETDSCONF}

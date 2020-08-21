@@ -6,3 +6,6 @@ PWD=${TDSPWDPWD}
 SRV=${TDSPWDSRV}
 DB=${TDSPWDDB}
 __EOF__
+
+pwd
+cat PWD
