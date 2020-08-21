@@ -431,6 +431,7 @@ tds_connect(TDSSOCKET * tds, TDSLOGIN * login, int *p_oserr)
 
 	if (!login->valid_configuration) {
 		tdserror(tds_get_ctx(tds), tds, TDSECONF, 0);
+		fprintf(stderr, "!login->valid_configuration\n");
 		return TDS_FAIL;
 	}
 

@@ -104,11 +104,14 @@ try_tds_login(TDSLOGIN ** login, TDSSOCKET ** tds, const char *appname, int verb
 	*tds = tds_alloc_socket(test_context, 512);
 	tds_set_parent(*tds, NULL);
 	connection = tds_read_config_info(*tds, *login, test_context->locale);
+	fprintf(stderr, "tds_connect_and_login::\n");
 	if (!connection || tds_connect_and_login(*tds, connection) != TDS_SUCCESS) {
 		if (connection) {
 			tds_free_socket(*tds);
 			*tds = NULL;
 			tds_free_login(connection);
+		} else {
+			fprintf(stderr, "connection == NULL\n");
 		}
 		fprintf(stderr, "tds_connect_and_login() failed\n");
 		return TDS_FAIL;

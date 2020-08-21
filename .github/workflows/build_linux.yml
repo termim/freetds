@@ -65,7 +65,7 @@ jobs:
         UID=${TDSPWDUID}
         PWD=${TDSPWDPWD}
         SRV=JDBC
-        DB=tempdb" >> ${TDSPWDFILE}
+        DB=tempdb\n" >> ${TDSPWDFILE}
 
     - name: make check2
       run: |

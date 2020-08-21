@@ -358,8 +358,8 @@ tdsdump_log(const char* file, unsigned int level_line, const char *fmt, ...)
 	va_list ap;
 	FILE *dumpfile;
 
-	if (((tds_debug_flags >> debug_lvl) & 1) == 0 || !tds_write_dump)
-		return;
+	//if (((tds_debug_flags >> debug_lvl) & 1) == 0 || !tds_write_dump)
+		//return;
 
 	if (!g_dumpfile && !g_dump_filename)
 		return;
