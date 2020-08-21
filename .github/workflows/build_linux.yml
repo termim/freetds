@@ -16,7 +16,7 @@ jobs:
         os: [ubuntu-latest]
 
     env:
-        FREETDSCONF: /tmp/freetds.conf.local
+        #FREETDSCONF: /tmp/freetds.conf.local
         TDSPWDSRV: localhost
         TDSPWDUID: sa
         TDSPWDPWD: sqlServerPassw0rd
@@ -47,17 +47,13 @@ jobs:
     - name: make
       run: make
 
-    - name: make check1
-      run: |
-        echo -e "\n
-        [global]\n
-        port = ${TDSPORT}\n
-        tds version = ${TDSVER}\n
-        encryption = require" >> /tmp/freetds.conf.local
-
-    - name: make check20
-      run: >
-        echo -e " -H $TDSPWDSRV -p $TDSPORT -U $TDSPWDUID -P $TDSPWDPWD"
+    #- name: make check1
+      #run: |
+        #echo -e "\n
+        #[global]\n
+        #port = ${TDSPORT}\n
+        #tds version = ${TDSVER}\n
+        #encryption = require" >> /tmp/freetds.conf.local
 
     - name: make check2
       run: >
