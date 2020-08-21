@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE Tasks SYSTEM "Tasks-6.0.dtd">
+<!-- eric6 tasks file for project freetds -->
+<Tasks version="6.0">
+  <ProjectScanFilter></ProjectScanFilter>
+  <Task priority="1" completed="False" type="1" uid="{0b8268ae-290c-4cc7-9b40-f7710b236624}">
+    <Summary>TODO:  ^^^^^ make upper case when old #defines (above) are removed */</Summary>
+    <Description></Description>
+    <Created>2020-08-21, 12:44:23</Created>
+    <Resource>
+      <Filename>include/freetds/tds.h</Filename>
+      <Linenumber>863</Linenumber>
+    </Resource>
+  </Task>
+</Tasks>

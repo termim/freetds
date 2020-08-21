@@ -1,0 +1,44 @@
+name: Test
+
+on:
+  push:
+    #branches: [ master ]
+  pull_request:
+    #branches: [ master ]
+
+jobs:
+
+  build:
+
+    runs-on: ${{ matrix.os }}
+    strategy:
+      matrix:
+        os: [ubuntu-latest]
+
+    steps:
+
+    - uses: actions/checkout@v2
+
+    - name: before_install
+      run:  |
+        #sudo apt-get install libgnutls-dev  # install libgnutls-dev BEFORE adding PPA; otherwise I seem to get some version that breaks things
+        #sudo add-apt-repository ppa:dns/gnu --yes  # this PPA has a newer automake (1.14) than one in default repo (1.11)
+        #sudo apt-get update
+        sudo apt-get install autoconf automake libtool gettext gperf
+        #dpkg -l libgnutls-dev
+        autoreconf -i
+
+    - name: configure
+      run: ./configure --with-openssl  --enable-silent-rules
+
+    - name: make
+      run: make
+
+    - name: make check
+      run: make check
+
+    - name: make distcheck
+      run: make distcheck
+
+    - name: install
+      run: make install
