@@ -53,7 +53,16 @@ jobs:
     - name: make
       run: make
 
-    - name: create FREETDSCONF
+    - name: dist
+      run: make dist
+
+    - name: Archive tarball
+      uses: actions/upload-artifact@v2
+      with:
+        name: tarball
+        path: freetds-*.tar.bz2
+
+    - name: make check
       run: |
         echo -e "\n
         [global]\n
@@ -62,21 +71,15 @@ jobs:
         encryption = require\n
         [local]\n
         host = 127.0.0.1\n" >> ${FREETDSCONF}
-
-    - name: make check
-      run: |
         misc/write_PWD_from_env_vars.sh
         make -C src/tds/unittests check
 
-    - name: LOG
+    - name: Archive failed test results
       if: ${{ failure() }}
-      run: |
-        cat src/tds/unittests/test-suite.log
-        cat ${TDSDUMPCONFIG}
-        cat ${TDSDUMP}
-
-    - name: dist
-      run: make dist
-
-    - name: install
-      run: make install
+      uses: actions/upload-artifact@v2
+      with:
+        name: test-suite.log
+        path: |
+            src/tds/unittests/test-suite.log
+            ${TDSDUMPCONFIG}
+            ${TDSDUMP}
