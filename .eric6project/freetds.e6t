@@ -3,13 +3,436 @@
 <!-- eric6 tasks file for project freetds -->
 <Tasks version="6.0">
   <ProjectScanFilter></ProjectScanFilter>
-  <Task priority="1" completed="False" type="1" uid="{0b8268ae-290c-4cc7-9b40-f7710b236624}">
+  <Task priority="1" completed="False" type="1" uid="{aa670dbb-a33d-491f-ae91-e71944722352}">
+    <Summary>TODO: Implement dbcoltypeinfo() for numeric/decimal datatypes.</Summary>
+    <Description></Description>
+    <Created>2020-10-19, 14:41:31</Created>
+    <Resource>
+      <Filename>src/apps/bsqldb.c</Filename>
+      <Linenumber>433</Linenumber>
+    </Resource>
+  </Task>
+  <Task priority="1" completed="False" type="1" uid="{eb71d905-44df-4c78-a9c7-66fed791cad7}">
+    <Summary>TODO: FreeTDS 0.62 does not support dbsetnull() */</Summary>
+    <Description></Description>
+    <Created>2020-10-19, 14:41:31</Created>
+    <Resource>
+      <Filename>src/apps/bsqldb.c</Filename>
+      <Linenumber>629</Linenumber>
+    </Resource>
+  </Task>
+  <Task priority="1" completed="False" type="1" uid="{26adc616-6996-44dc-904a-e0a64cd8921b}">
+    <Summary>TODO: FreeTDS 0.62 does not support dbsetnull() */</Summary>
+    <Description></Description>
+    <Created>2020-10-19, 14:41:31</Created>
+    <Resource>
+      <Filename>src/apps/bsqldb.c</Filename>
+      <Linenumber>673</Linenumber>
+    </Resource>
+  </Task>
+  <Task priority="1" completed="False" type="1" uid="{b4e178a8-7f67-49fd-8937-372dbc8a7197}">
+    <Summary>TODO: support loading procedures onto the server.</Summary>
+    <Description></Description>
+    <Created>2020-10-19, 14:41:31</Created>
+    <Resource>
+      <Filename>src/apps/defncopy.c</Filename>
+      <Linenumber>138</Linenumber>
+    </Resource>
+  </Task>
+  <Task priority="1" completed="False" type="1" uid="{4e0fc2e1-fb47-46cb-987f-4aef4d684c10}">
+    <Summary>TODO: It would be convenient to have a function that looks up a reasonable port based on:</Summary>
+    <Description></Description>
+    <Created>2020-10-19, 14:41:31</Created>
+    <Resource>
+      <Filename>src/apps/tsql.c</Filename>
+      <Linenumber>554</Linenumber>
+    </Resource>
+  </Task>
+  <Task priority="1" completed="False" type="1" uid="{2a549394-c2c5-4e22-90b3-9bc9a8127df7}">
+    <Summary>TODO: add error message */</Summary>
+    <Description></Description>
+    <Created>2020-10-19, 14:41:31</Created>
+    <Resource>
+      <Filename>src/ctlib/cs.c</Filename>
+      <Linenumber>483</Linenumber>
+    </Resource>
+  </Task>
+  <Task priority="1" completed="False" type="1" uid="{d177907b-9d64-4b2b-9528-fa4d78ad264d}">
+    <Summary>TODO: add error message */</Summary>
+    <Description></Description>
+    <Created>2020-10-19, 14:41:31</Created>
+    <Resource>
+      <Filename>src/ctlib/cs.c</Filename>
+      <Linenumber>491</Linenumber>
+    </Resource>
+  </Task>
+  <Task priority="1" completed="False" type="1" uid="{eb90fe90-2c0a-4a1a-8a54-379ee775258a}">
+    <Summary>TODO: implement cs_setnull */</Summary>
+    <Description></Description>
+    <Created>2020-10-19, 14:41:31</Created>
+    <Resource>
+      <Filename>src/ctlib/cs.c</Filename>
+      <Linenumber>502</Linenumber>
+    </Resource>
+  </Task>
+  <Task priority="1" completed="False" type="0" uid="{ae25d4e4-19ea-435a-9a09-5fbb3c4c4aea}">
+    <Summary>FIXME: I don't know the value for RECOMPILE, NORECOMPILE options. Hence assigning zero  */</Summary>
+    <Description></Description>
+    <Created>2020-10-19, 14:41:31</Created>
+    <Resource>
+      <Filename>src/ctlib/ct.c</Filename>
+      <Linenumber>855</Linenumber>
+    </Resource>
+  </Task>
+  <Task priority="1" completed="False" type="1" uid="{95ff7cf6-b4bb-4515-88ba-aebdb270ec1b}">
+    <Summary>TODO: add special case for CS_CHAR_TYPE and give different</Summary>
+    <Description></Description>
+    <Created>2020-10-19, 14:41:31</Created>
+    <Resource>
+      <Filename>src/ctlib/unittests/cs_convert.c</Filename>
+      <Linenumber>54</Linenumber>
+    </Resource>
+  </Task>
+  <Task priority="1" completed="False" type="0" uid="{ddf21d72-e071-4d72-89ae-823ec2439fa1}">
+    <Summary>FIXME: correct ?? */</Summary>
+    <Description></Description>
+    <Created>2020-10-19, 14:41:31</Created>
+    <Resource>
+      <Filename>src/ctlib/unittests/cs_convert.c</Filename>
+      <Linenumber>143</Linenumber>
+    </Resource>
+  </Task>
+  <Task priority="1" completed="False" type="0" uid="{7119b55f-3dfc-4885-9c7a-03af8d910d57}">
+    <Summary>FIXME: or 1 if != 0 ?? */</Summary>
+    <Description></Description>
+    <Created>2020-10-19, 14:41:31</Created>
+    <Resource>
+      <Filename>src/ctlib/unittests/cs_convert.c</Filename>
+      <Linenumber>181</Linenumber>
+    </Resource>
+  </Task>
+  <Task priority="1" completed="False" type="1" uid="{6115c51f-575f-4395-919e-2a9cf17ef41c}">
+    <Summary>TODO:</Summary>
+    <Description></Description>
+    <Created>2020-10-19, 14:41:31</Created>
+    <Resource>
+      <Filename>src/dblib/bcp.c</Filename>
+      <Linenumber>1287</Linenumber>
+    </Resource>
+  </Task>
+  <Task priority="1" completed="False" type="1" uid="{953797e4-3e42-4cee-a669-ef130d211e94}">
+    <Summary>TODO: Call tds_bcp_fread() instead of fread(3).</Summary>
+    <Description></Description>
+    <Created>2020-10-19, 14:41:31</Created>
+    <Resource>
+      <Filename>src/dblib/bcp.c</Filename>
+      <Linenumber>1308</Linenumber>
+    </Resource>
+  </Task>
+  <Task priority="1" completed="False" type="0" uid="{f4ec395b-15b3-40c4-ba7f-2d0203ba5f8a}">
+    <Summary>FIXME: support local server for win32.</Summary>
+    <Description></Description>
+    <Created>2020-10-19, 14:41:31</Created>
+    <Resource>
+      <Filename>src/dblib/dblib.c</Filename>
+      <Linenumber>1193</Linenumber>
+    </Resource>
+  </Task>
+  <Task priority="1" completed="False" type="0" uid="{893ff986-b015-4a30-806e-a695edb4ae16}">
+    <Summary>FIXME: should determine REG_ROW or compute_id; */</Summary>
+    <Description></Description>
+    <Created>2020-10-19, 14:41:31</Created>
+    <Resource>
+      <Filename>src/dblib/dblib.c</Filename>
+      <Linenumber>2057</Linenumber>
+    </Resource>
+  </Task>
+  <Task priority="1" completed="False" type="1" uid="{ff02c698-3b40-44cb-b64c-8bb77a6e34d5}">
+    <Summary>TODO: adhere to docs.  Only Microsoft supports DBRPCRESET.  They say:</Summary>
+    <Description></Description>
+    <Created>2020-10-19, 14:41:31</Created>
+    <Resource>
+      <Filename>src/dblib/rpc.c</Filename>
+      <Linenumber>81</Linenumber>
+    </Resource>
+  </Task>
+  <Task priority="1" completed="False" type="1" uid="{e21f06c1-204e-4301-bde0-cea618b7f360}">
+    <Summary>TODO: why does an update get a column? */</Summary>
+    <Description></Description>
+    <Created>2020-10-19, 14:41:31</Created>
+    <Resource>
+      <Filename>src/dblib/unittests/batch_stmt_ins_sel.c</Filename>
+      <Linenumber>183</Linenumber>
+    </Resource>
+  </Task>
+  <Task priority="1" completed="False" type="0" uid="{543d2103-1a0c-43b0-a2cc-5b1f18c0c858}">
+    <Summary>FIXME: Should be able to use the common err/msg handlers, but something about</Summary>
+    <Description></Description>
+    <Created>2020-10-19, 14:41:31</Created>
+    <Resource>
+      <Filename>src/dblib/unittests/done_handling.c</Filename>
+      <Linenumber>164</Linenumber>
+    </Resource>
+  </Task>
+  <Task priority="1" completed="False" type="2" uid="{3c134927-d77b-4a8f-81d8-fbeb2f9e326a}">
+    <Summary>WARNING:  Received no return parameters from server!\n&quot;);</Summary>
+    <Description></Description>
+    <Created>2020-10-19, 14:41:31</Created>
+    <Resource>
+      <Filename>src/dblib/unittests/t0022.c</Filename>
+      <Linenumber>93</Linenumber>
+    </Resource>
+  </Task>
+  <Task priority="1" completed="False" type="2" uid="{a4500df8-1681-4821-bbfa-ea56ca238412}">
+    <Summary>WARNING:  This is likely due to a bug in Microsoft\n&quot;);</Summary>
+    <Description></Description>
+    <Created>2020-10-19, 14:41:31</Created>
+    <Resource>
+      <Filename>src/dblib/unittests/t0022.c</Filename>
+      <Linenumber>94</Linenumber>
+    </Resource>
+  </Task>
+  <Task priority="1" completed="False" type="2" uid="{48420cfc-3945-4ab1-8ff2-e13fb3d061bd}">
+    <Summary>WARNING:  SQL Server 7.0 SP3 and later.\n&quot;);</Summary>
+    <Description></Description>
+    <Created>2020-10-19, 14:41:31</Created>
+    <Resource>
+      <Filename>src/dblib/unittests/t0022.c</Filename>
+      <Linenumber>95</Linenumber>
+    </Resource>
+  </Task>
+  <Task priority="1" completed="False" type="2" uid="{7cae988f-c742-42d5-b4ed-49b3bf2978de}">
+    <Summary>WARNING:  Please try again using TDS protocol 4.2.\n&quot;);</Summary>
+    <Description></Description>
+    <Created>2020-10-19, 14:41:31</Created>
+    <Resource>
+      <Filename>src/dblib/unittests/t0022.c</Filename>
+      <Linenumber>96</Linenumber>
+    </Resource>
+  </Task>
+  <Task priority="1" completed="False" type="2" uid="{78752967-ff24-4abb-80e9-dbd802ce1091}">
+    <Summary>WARNING: Functionality for NULL pszSection not implemented.\n&quot;);</Summary>
+    <Description></Description>
+    <Created>2020-10-19, 14:41:31</Created>
+    <Resource>
+      <Filename>src/odbc/connectparams.c</Filename>
+      <Linenumber>557</Linenumber>
+    </Resource>
+  </Task>
+  <Task priority="1" completed="False" type="2" uid="{4e6b7612-ebc0-437d-9cb6-15b68e09a11a}">
+    <Summary>WARNING: Functionality for NULL pszEntry not implemented.\n&quot;);</Summary>
+    <Description></Description>
+    <Created>2020-10-19, 14:41:31</Created>
+    <Resource>
+      <Filename>src/odbc/connectparams.c</Filename>
+      <Linenumber>563</Linenumber>
+    </Resource>
+  </Task>
+  <Task priority="1" completed="False" type="2" uid="{cbd33d40-2741-4373-afcc-00376f6008ac}">
+    <Summary>WARNING: No space to return a value because nRetBuffer &lt; 1.\n&quot;);</Summary>
+    <Description></Description>
+    <Created>2020-10-19, 14:41:31</Created>
+    <Resource>
+      <Filename>src/odbc/connectparams.c</Filename>
+      <Linenumber>568</Linenumber>
+    </Resource>
+  </Task>
+  <Task priority="1" completed="False" type="1" uid="{1c3b3b46-85ce-465b-8d2f-2c78e7978718}">
+    <Summary>TODO: test syntax like &quot;select 1 as [pi]]p)p{?=call]]]]o], 2&quot; on mssql7+ */</Summary>
+    <Description></Description>
+    <Created>2020-10-19, 14:41:31</Created>
+    <Resource>
+      <Filename>src/odbc/native.c</Filename>
+      <Linenumber>106</Linenumber>
+    </Resource>
+  </Task>
+  <Task priority="1" completed="False" type="0" uid="{8c3464e1-bdb3-4135-9eba-0846077a03fa}">
+    <Summary>FIXME: stop at other characters ??? */</Summary>
+    <Description></Description>
+    <Created>2020-10-19, 14:41:31</Created>
+    <Resource>
+      <Filename>src/odbc/native.c</Filename>
+      <Linenumber>246</Linenumber>
+    </Resource>
+  </Task>
+  <Task priority="1" completed="False" type="1" uid="{4b25c0ca-f62a-4237-81ca-5236b2de92c9}">
+    <Summary>TODO: determine the right answer from connection</Summary>
+    <Description></Description>
+    <Created>2020-10-19, 14:41:31</Created>
+    <Resource>
+      <Filename>src/odbc/odbc.c</Filename>
+      <Linenumber>5399</Linenumber>
+    </Resource>
+  </Task>
+  <Task priority="1" completed="False" type="3" uid="{251ccf63-386c-44c3-b3f9-4fee0fdfde82}">
+    <Summary>NOTE: always return not nullable type */</Summary>
+    <Description></Description>
+    <Created>2020-10-19, 14:41:31</Created>
+    <Resource>
+      <Filename>src/odbc/odbc_util.c</Filename>
+      <Linenumber>777</Linenumber>
+    </Resource>
+  </Task>
+  <Task priority="1" completed="False" type="0" uid="{164e4d46-2419-47cc-9b2d-24aadabe1651}">
+    <Summary>FIXME: use the default if the parameter has one. */</Summary>
+    <Description></Description>
+    <Created>2020-10-19, 14:41:31</Created>
+    <Resource>
+      <Filename>src/odbc/prepare_query.c</Filename>
+      <Linenumber>351</Linenumber>
+    </Resource>
+  </Task>
+  <Task priority="1" completed="False" type="1" uid="{92fcd062-fcd4-411a-a6a0-2b6728f30d45}">
+    <Summary>TODO: WE DON'T HANDLE PARAMETERS YET! */</Summary>
+    <Description></Description>
+    <Created>2020-10-19, 14:41:31</Created>
+    <Resource>
+      <Filename>src/server/query.c</Filename>
+      <Linenumber>190</Linenumber>
+    </Resource>
+  </Task>
+  <Task priority="1" completed="False" type="3" uid="{dcde4337-592e-474d-8151-b7ebd47c023b}">
+    <Summary>NOTE: I don't know why each type of environment value has a different</Summary>
+    <Description></Description>
+    <Created>2020-10-19, 14:41:31</Created>
+    <Resource>
+      <Filename>src/server/server.c</Filename>
+      <Linenumber>45</Linenumber>
+    </Resource>
+  </Task>
+  <Task priority="1" completed="False" type="3" uid="{f426c044-80d5-4e53-9405-a5a0f0b72d0e}">
+    <Summary>NOTE: if we use &quot;with nodescribe&quot; for following inserts server do not send describe */</Summary>
+    <Description></Description>
+    <Created>2020-10-19, 14:41:31</Created>
+    <Resource>
+      <Filename>src/tds/bulk.c</Filename>
+      <Linenumber>316</Linenumber>
+    </Resource>
+  </Task>
+  <Task priority="1" completed="False" type="0" uid="{2496f749-d9bf-46e7-ad3b-16ea23376bcc}">
+    <Summary>FIXME: stuff duplicate in tds7_send_login */</Summary>
+    <Description></Description>
+    <Created>2020-10-19, 14:41:31</Created>
+    <Resource>
+      <Filename>src/tds/challenge.c</Filename>
+      <Linenumber>421</Linenumber>
+    </Resource>
+  </Task>
+  <Task priority="1" completed="False" type="3" uid="{bbed6e30-531e-4774-bbcc-a77dfeef4272}">
+    <Summary>NOTE: Do not prepend 0x to string.</Summary>
+    <Description></Description>
+    <Created>2020-10-19, 14:41:31</Created>
+    <Resource>
+      <Filename>src/tds/convert.c</Filename>
+      <Linenumber>232</Linenumber>
+    </Resource>
+  </Task>
+  <Task priority="1" completed="False" type="1" uid="{0bcc098f-9ed2-4489-8988-e6f0d54c5e11}">
+    <Summary>TODO: round ?? */</Summary>
+    <Description></Description>
+    <Created>2020-10-19, 14:41:31</Created>
+    <Resource>
+      <Filename>src/tds/convert.c</Filename>
+      <Linenumber>1180</Linenumber>
+    </Resource>
+  </Task>
+  <Task priority="1" completed="False" type="1" uid="{a3681541-5075-487d-8a80-4942ce876132}">
+    <Summary>TODO: emit SYBECLPR errors: &quot;Data conversion resulted in loss of precision&quot;.</Summary>
+    <Description></Description>
+    <Created>2020-10-19, 14:41:32</Created>
+    <Resource>
+      <Filename>src/tds/convert.c</Filename>
+      <Linenumber>1604</Linenumber>
+    </Resource>
+  </Task>
+  <Task priority="1" completed="False" type="0" uid="{efde665a-6055-4d13-938f-b5b562800d31}">
+    <Summary>FIXME: application can pass invalid value for precision and scale ?? */</Summary>
+    <Description></Description>
+    <Created>2020-10-19, 14:41:32</Created>
+    <Resource>
+      <Filename>src/tds/convert.c</Filename>
+      <Linenumber>2282</Linenumber>
+    </Resource>
+  </Task>
+  <Task priority="1" completed="False" type="1" uid="{087765a7-3980-453b-b8a3-25502fccd855}">
+    <Summary>TODO: the server hasn't reported its charset yet, so this logic can't work here.</Summary>
+    <Description></Description>
+    <Created>2020-10-19, 14:41:32</Created>
+    <Resource>
+      <Filename>src/tds/iconv.c</Filename>
+      <Linenumber>414</Linenumber>
+    </Resource>
+  </Task>
+  <Task priority="1" completed="False" type="3" uid="{73ffd822-6ccd-4cfc-a1a5-f96379844e45}">
+    <Summary>NOTE: even for TDS5 we use this packet so to avoid computing</Summary>
+    <Description></Description>
+    <Created>2020-10-19, 14:41:32</Created>
+    <Resource>
+      <Filename>src/tds/query.c</Filename>
+      <Linenumber>3283</Linenumber>
+    </Resource>
+  </Task>
+  <Task priority="1" completed="False" type="3" uid="{2e03a41d-4165-43d1-9553-1ea9ba506856}">
+    <Summary>NOTE: there functions return int however they cannot fail */</Summary>
+    <Description></Description>
+    <Created>2020-10-19, 14:41:32</Created>
+    <Resource>
+      <Filename>src/tds/tls.c</Filename>
+      <Linenumber>510</Linenumber>
+    </Resource>
+  </Task>
+  <Task priority="1" completed="False" type="1" uid="{6f77d265-7234-4828-8687-92d849d1e8d3}">
+    <Summary>TODO: implement members in TDSCOLUMN */</Summary>
+    <Description></Description>
+    <Created>2020-10-19, 14:41:32</Created>
+    <Resource>
+      <Filename>src/tds/token.c</Filename>
+      <Linenumber>1683</Linenumber>
+    </Resource>
+  </Task>
+  <Task priority="1" completed="False" type="1" uid="{82afca52-9d3a-42fa-8fbd-0a7c69fbccc4}">
+    <Summary>TODO: implement members in TDSCOLUMN, values untested */</Summary>
+    <Description></Description>
+    <Created>2020-10-19, 14:41:32</Created>
+    <Resource>
+      <Filename>src/tds/token.c</Filename>
+      <Linenumber>1696</Linenumber>
+    </Resource>
+  </Task>
+  <Task priority="1" completed="False" type="1" uid="{95f2231e-2a74-4cd3-b25e-8ad420782e3e}">
+    <Summary>TODO: If port/instance is specified in the non-default, it has priority over the default setting.</Summary>
+    <Description></Description>
+    <Created>2020-10-19, 14:55:32</Created>
+    <Resource>
+      <Filename>src/tds/config.c</Filename>
+      <Linenumber>422</Linenumber>
+    </Resource>
+  </Task>
+  <Task priority="1" completed="False" type="1" uid="{42d6910f-4b7f-4393-b5a4-a6fc43170e3d}">
+    <Summary>TODO: test this.</Summary>
+    <Description></Description>
+    <Created>2020-10-19, 14:55:32</Created>
+    <Resource>
+      <Filename>src/tds/config.c</Filename>
+      <Linenumber>423</Linenumber>
+    </Resource>
+  </Task>
+  <Task priority="1" completed="False" type="1" uid="{85f4db47-9ea5-447e-bd35-4c89ee3f4245}">
     <Summary>TODO:  ^^^^^ make upper case when old #defines (above) are removed */</Summary>
     <Description></Description>
-    <Created>2020-08-21, 12:44:23</Created>
+    <Created>2020-10-19, 17:26:06</Created>
     <Resource>
       <Filename>include/freetds/tds.h</Filename>
       <Linenumber>863</Linenumber>
+    </Resource>
+  </Task>
+  <Task priority="1" completed="False" type="0" uid="{93059a52-d1d6-448f-a05c-4dd2ea6e0fd8}">
+    <Summary>FIXME: These are defined as size_t, but should be TDS_SMALLINT. */</Summary>
+    <Description></Description>
+    <Created>2020-10-19, 17:27:42</Created>
+    <Resource>
+      <Filename>src/tds/login.c</Filename>
+      <Linenumber>891</Linenumber>
     </Resource>
   </Task>
 </Tasks>
