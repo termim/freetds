@@ -27,35 +27,24 @@ jobs:
 
     - name: configure
       run: |
-        mkdir build
-        cd build
-        autoreconf -i ..
-        ../configure --with-gnutls --enable-silent-rules
+        autoreconf -i
+        ./configure --with-gnutls --enable-silent-rules
 
     - name: make
       run: |
-        cd build
         make
         src/apps/tsql -C
 
     - name: dist
-      run: |
-        cd build
-        make dist
+      run: make dist
 
     - name: Archive tarball
       uses: actions/upload-artifact@v2
       with:
         name: freetds-src
         path: |
-            build/freetds-*.tar.bz2
-            build/freetds-*.tar.gz
-
-    - name: Archive bins
-      uses: actions/upload-artifact@v2
-      with:
-        name: freetds-bins
-        path: build/
+            freetds-*.tar.bz2
+            freetds-*.tar.gz
 
   test:
 
@@ -98,14 +87,15 @@ jobs:
                             autoconf automake libtool gettext gperf \
                             libgnutls28-dev
 
-    - name: Download bins
-      uses: actions/download-artifact@v2
-      with:
-        name: freetds-bins
-
-    - name: display
+    - name: configure
       run: |
-        ls - lr build
+        autoreconf -i
+        ./configure --with-gnutls --enable-silent-rules
+
+    - name: make
+      run: |
+        make
+        src/apps/tsql -C
 
     - name: make check
       run: |
@@ -117,8 +107,7 @@ jobs:
         encryption = require\n
         [local]\n
         host = 127.0.0.1\n" >> ${FREETDSCONF}
-        cd build
-        ../misc/write_PWD_from_env_vars.sh
+        misc/write_PWD_from_env_vars.sh
         make -C src/tds/unittests check
 
     - name: Archive failed test results
@@ -127,5 +116,5 @@ jobs:
       with:
         name: test-logs
         path: |
-            build/src/tds/unittests/test-suite.log
+            src/tds/unittests/test-suite.log
             /tmp/freetds/*
