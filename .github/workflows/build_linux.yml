@@ -1,4 +1,4 @@
-name: Build
+name: Linux
 
 on:
   push:
@@ -39,8 +39,8 @@ jobs:
     steps:
 
     - uses: actions/checkout@v2
-      with:
-        fetch-depth: 0
+      #with:
+        #fetch-depth: 0
         #ref: branch-1_2
 
     - name: Install dependencies
