@@ -51,6 +51,7 @@ jobs:
       matrix:
         os: [ubuntu-latest]
         tds-version: [7.0, 7.1, 7.2, 7.3, 7.4]
+        mssql-version: [2017, 2019]
 
     env:
         FREETDSCONF: /tmp/freetds/freetds.conf.local
@@ -66,7 +67,7 @@ jobs:
 
     services:
       SQLServer:
-        image: mcr.microsoft.com/mssql/server:2017-latest
+        image: mcr.microsoft.com/mssql/server:${{ matrix.mssql-version }}-latest
         env:
           ACCEPT_EULA: Y
           SA_PASSWORD: ${{ env.TDSPWDPWD }}
