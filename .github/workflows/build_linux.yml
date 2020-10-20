@@ -15,6 +15,39 @@ jobs:
       matrix:
         os: [ubuntu-latest]
 
+    steps:
+
+    - uses: actions/checkout@v2
+
+    - name: Install dependencies
+      run:  |
+        sudo apt-get install autoconf automake libtool gettext gperf libssl-dev libgnutls28-dev
+        autoreconf -i
+
+    - name: configure
+      run: ./configure --with-openssl --with-gnutls --enable-silent-rules
+
+    - name: make
+      run: |
+        make
+        src/apps/tsql -C
+
+    - name: dist
+      run: make dist
+
+    - name: Archive tarball
+      uses: actions/upload-artifact@v2
+      with:
+        name: freetds-src
+        path: freetds-*.tar.bz2
+
+  test:
+
+    runs-on: ${{ matrix.os }}
+    strategy:
+      matrix:
+        os: [ubuntu-latest]
+
     env:
         FREETDSCONF: /tmp/freetds/freetds.conf.local
         TDSDUMP: /tmp/freetds/freetds.log
@@ -39,31 +72,20 @@ jobs:
     steps:
 
     - uses: actions/checkout@v2
-      #with:
-        #fetch-depth: 0
-        #ref: branch-1_2
 
     - name: Install dependencies
-      run:  |
-        sudo apt-get install autoconf automake libtool gettext gperf libgnutls28-dev
-        autoreconf -i
+      run:  sudo apt-get install autoconf automake libtool gettext gperf \
+                                libssl-dev libgnutls28-dev
 
     - name: configure
-      run: ./configure --with-openssl --with-gnutls --enable-silent-rules
+      run: |
+        autoreconf -i
+        ./configure --with-openssl --with-gnutls --enable-silent-rules
 
     - name: make
       run: |
         make
         src/apps/tsql -C
-
-    - name: dist
-      run: make dist
-
-    - name: Archive tarball
-      uses: actions/upload-artifact@v2
-      with:
-        name: freetds-src
-        path: freetds-*.tar.bz2
 
     - name: make check
       run: |
@@ -82,7 +104,7 @@ jobs:
       if: failure()
       uses: actions/upload-artifact@v2
       with:
-        name: test-suite.log
+        name: test-logs
         path: |
             src/tds/unittests/test-suite.log
             /tmp/freetds/*
