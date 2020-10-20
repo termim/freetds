@@ -1,4 +1,4 @@
-name: Test
+name: Build
 
 on:
   push:
@@ -52,7 +52,9 @@ jobs:
       run: ./configure --with-openssl --with-gnutls --enable-silent-rules
 
     - name: make
-      run: make
+      run: |
+        make
+        src/apps/tsql -C
 
     - name: dist
       run: make dist
