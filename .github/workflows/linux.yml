@@ -50,6 +50,7 @@ jobs:
     strategy:
       matrix:
         os: [ubuntu-latest]
+        tds-version: [7.0, 7.1, 7.2, 7.3, 7.4]
 
     env:
         FREETDSCONF: /tmp/freetds/freetds.conf.local
@@ -60,7 +61,7 @@ jobs:
         TDSPWDUID: sa
         TDSPWDPWD: sqlServerPassw0rd
         TDSPORT: 1433
-        TDSVER: 7.2
+        TDSVER: ${{ matrix.tds-version }}
         TDSPWDFILE: /tmp/freetds.pwd
 
     services:
