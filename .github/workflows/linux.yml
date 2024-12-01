@@ -35,10 +35,15 @@ jobs:
     - name: configure
       run: |
         autoreconf -i
-        ./configure --with-gnutls  --enable-silent-rules
+        ./configure --with-gnutls  --enable-silent-rules --prefix=/tmp/freetds
 
     - name: make
       run: make
+
+    - name: install
+      run: |
+        make install
+        (cd ./samples; ./unixodbc.install.sh)
 
     - name: make check
       env:
