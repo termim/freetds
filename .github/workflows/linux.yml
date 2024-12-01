@@ -43,7 +43,11 @@ jobs:
     - name: install
       run: |
         make install
-        (cd ./samples; ./unixodbc.install.sh)
+        pushd ./samples
+        sed -e 's,@libdir@,/tmp/freetds/lib,g' < unixodbc.freetds.driver.template.in > unixodbc.freetds.driver.template
+        cat unixodbc.freetds.driver.template
+        sudo ./unixodbc.install.sh
+        popd
 
     - name: make check
       env:
@@ -53,7 +57,6 @@ jobs:
         TDSPWDDB: tempdb
       run: |
         ./misc/write_PWD_from_env_vars.sh
-        (cd ./samples; ./unixodbc.install.sh)
         make check VERBOSE=1
 
     - name: make distcheck
