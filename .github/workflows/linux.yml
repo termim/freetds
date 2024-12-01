@@ -13,6 +13,15 @@ jobs:
 
     runs-on: ubuntu-latest
 
+    services:
+      SQLServer:
+        image: mcr.microsoft.com/mssql/server:2017-latest
+        env:
+          ACCEPT_EULA: Y
+          SA_PASSWORD: sqlServerPassw0rd
+        ports:
+          - 1433:1433
+
     steps:
     - uses: actions/checkout@v4
 
@@ -32,7 +41,14 @@ jobs:
       run: make
 
     - name: make check
-      run: make check
+      env:
+        TDSPWDUID: sa
+        TDSPWDPWD: sqlServerPassw0rd
+        TDSPWDSRV: localhost
+        TDSPWDDB: tempdb
+      run: |
+        ./misc/write_PWD_from_env_vars.sh
+        make check VERBOSE=1
 
     - name: make distcheck
       run: make distcheck
