@@ -48,6 +48,7 @@ jobs:
         TDSPWDDB: tempdb
       run: |
         ./misc/write_PWD_from_env_vars.sh
+        (cd ./samples; ./unixodbc.install.sh)
         make check VERBOSE=1
 
     - name: make distcheck
