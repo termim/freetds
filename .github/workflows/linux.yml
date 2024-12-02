@@ -65,4 +65,4 @@ jobs:
         make -C src/apps/unittests check VERBOSE=1
 
     - name: make distcheck
-      run: make distcheck
+      run: ./misc/test-dist.sh --no-unittests
