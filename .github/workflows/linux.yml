@@ -43,11 +43,11 @@ jobs:
     - name: install
       run: |
         make install
-        pushd ./samples
-        sed -e 's,@libdir@,/tmp/freetds/lib,g' < unixodbc.freetds.driver.template.in > unixodbc.freetds.driver.template
-        cat unixodbc.freetds.driver.template
-        sudo ./unixodbc.install.sh
-        popd
+        #pushd ./samples
+        #sed -e 's,@libdir@,/tmp/freetds/lib,g' < unixodbc.freetds.driver.template.in > unixodbc.freetds.driver.template
+        #cat unixodbc.freetds.driver.template
+        #sudo ./unixodbc.install.sh
+        #popd
 
     - name: make check
       env:
