@@ -57,7 +57,12 @@ jobs:
         TDSPWDDB: tempdb
       run: |
         ./misc/write_PWD_from_env_vars.sh
-        make check VERBOSE=1
+        make -C src/tds/unittests check VERBOSE=1
+        make -C src/dblib/unittests check VERBOSE=1
+        make -C src/ctlib/unittests check VERBOSE=1
+        make -C src/replacements/unittests check VERBOSE=1
+        make -C src/utils/unittests check VERBOSE=1
+        make -C src/apps/unittests check VERBOSE=1
 
     - name: make distcheck
       run: make distcheck
