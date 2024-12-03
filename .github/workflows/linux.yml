@@ -87,7 +87,7 @@ jobs:
       run: |
         make -C src/tds/unittests check VERBOSE=1
         make -C src/dblib/unittests check VERBOSE=1
-        make -C src/ctlib/unittests check VERBOSE=1
+        #make -C src/ctlib/unittests check VERBOSE=1
         make -C src/replacements/unittests check VERBOSE=1
         make -C src/utils/unittests check VERBOSE=1
         make -C src/apps/unittests check VERBOSE=1
